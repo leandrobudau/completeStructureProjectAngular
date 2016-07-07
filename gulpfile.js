@@ -10,7 +10,27 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     connect = require('gulp-connect'),
     pug = require('gulp-pug'),
-    templateCache = require('gulp-angular-templatecache'); 
+    templateCache = require('gulp-angular-templatecache'), 
+    server = require('karma').Server;
+
+/**
+ * Test
+ * Task for unit test of the project 
+ */    
+gulp.task('test', function (done) {
+  new server({
+    configFile: __dirname + '/karma.conf.js',
+      singleRun: true
+  }, done).start();
+});
+
+gulp.task('tdd', function (done) {
+  new server({
+    configFile: __dirname + '/karma.conf.js',
+  }, done).start(); 
+});
+    
+
 /**
  * build
  * Create build of the aplication
