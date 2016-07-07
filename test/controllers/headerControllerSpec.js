@@ -1,4 +1,4 @@
-describe('testando', function () {
+describe('Header Controller', function () {
     //Var declaration
     var $rootScope,
         $scope,
@@ -22,15 +22,9 @@ describe('testando', function () {
     });
 
 
-
-    it('testando', function () {
-        expect(true).toBe(true);
-    });
-
-
     // //Tests Tasks
     it('Should be with the $scope.teste = Leandro', function () {
-       expect(true).toEqual(true);  
+       expect($scope.teste).toEqual("Leandro");  
     });  
 
     it('Should be with function teste returning value teste', function () {
