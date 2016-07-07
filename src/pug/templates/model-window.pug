@@ -1,0 +1,11 @@
+div.model-window.mdl-card.mdl-shadow--2dp(ng-init="Init()", ng-class="typeView")
+	div.model-window__header(ng-class="windowColorHeader") 
+		div.model-window__header__icon(ng-click="changeVisualization()")  
+			button.mdl-button.mdl-js-button.mdl-button--icon(ng-class="windowTextHeader")
+				i.material-icons view_column
+		div.model-window__header__title.mdl-card__title(ng-class="windowTextHeader")
+			h2.mdl-card__title-text(ui-sref="{{rota}}") {{title}}  
+		div.model-window__header__close
+			button.mdl-button.mdl-js-button.mdl-button--primary.mdl-button--icon(ui-sref="{{closeWindow}}", ng-class="windowTextHeader")
+				i.material-icons close
+	div.model-window__content(ng-transclude)           

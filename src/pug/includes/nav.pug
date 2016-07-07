@@ -1,0 +1,25 @@
+mixin navigation(icon, description, link)
+  a.mdl-navigation__link.navbar__link(ui-sref=link) 
+    i.material-icons.mdl-list__item-icon.expand-menu__content__icon.navbar__link__icon= icon 
+    span.expand-menu__content__description= description 
+
+div.navbar
+    div.expand-menu__icon-toggle.expand-menu__icon-toggle--vertical-middle.expand-menu__icon-toggle--right
+        i.material-icons chevron_right
+    nav.mdl-navigation
+      +navigation('people', 'Colaboradores', '404')  
+      +navigation('perm_identity', 'Recrutamento ', '#')
+      +navigation('assignment_ind', 'Avaliações', '#')
+      +navigation('business', 'Empresa', '#')
+      +navigation('library_books', 'Relatórios', '#')
+      
+      
+      div.mdl-button {{single.Country}}
+      div.mdl-button {{teste[0].Country}}
+      div.navbar__menu-secundary
+        button.mdl-button.mdl-js-ripple-effect.mdl-js-button
+          i.material-icons search
+        button.mdl-button.mdl-js-ripple-effect.mdl-js-button
+          i.material-icons mail
+        button.mdl-button.mdl-js-ripple-effect.mdl-js-button 
+          i.material-icons perm_phone_msg

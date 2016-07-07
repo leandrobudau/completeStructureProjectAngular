@@ -1,0 +1,54 @@
+doctype html
+html(lang="pt-br" ng-app="app")
+	head
+		title Titulo do site
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		//build:css assets/css/libs/font-awesome.css
+		link(href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet")
+		//endbuild
+		//build:css assets/css/libs/material-design-lite.css
+		link(href="../bower_components/material-design-lite/material.css" rel="stylesheet")
+		//endbuild
+		//build:css assets/css/libs/angular-material.css
+		link(href="../bower_components/material-design-lite/material.css" rel="stylesheet")
+		//endbuild
+		//build:css assets/css/main.css
+		link(href="assets/css/main.css" rel="stylesheet")  
+		//endbuild
+	body
+		div.mdl-layout.mdl-js-layout.mdl-layout--fixed-header.layout
+			header.mdl-layout__header
+				include includes/header.pug
+			div.mdl-layout__drawer.layout__drawer.layout__drawer--close 
+				div.expand-menu
+					include includes/nav.pug
+			div.mdl-layout__content
+				model-window-container(ng-transclude)
+					ui-view
+			include includes/footer.pug
+		//build:js assets/js/libs/angular.js
+		script(src="../bower_components/angular/angular.js")
+		script(src="../bower_components/angular-ui-router/release/angular-ui-router.js")
+		script(src="../bower_components/angular-resource/angular-resource.js")
+		//endbuild
+		//build:js assets/js/libs/material-design-lite.js
+		script(src="../bower_components/material-design-lite/material.js")
+		//endbuild
+		//build:js assets/js/libs/angular-material.js
+		script(src="../bower_components/angular-material/angular-material.js")
+		//endbuild
+		//build:js app.js
+		script(src="app.js")
+		script(src="config.js")
+		script(src="router.js")
+		//endbuild
+		//build:js allServices.js
+		script(src="services/crudService.js")
+		script(src="services/headerService.js")
+		script(src="controllers/headerController.js")
+		script(src="controllers/navController.js")
+		script(src="modules/modelWindowModule.js")
+		script(src="assets/js/utilities/expandMenu.js")
+		//endbuild

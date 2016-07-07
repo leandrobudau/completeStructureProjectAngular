@@ -1,0 +1,15 @@
+div.model-window
+    div.model-window__header
+        div.model-window__header__icon(ng-click="changeVisualization()")
+            i.material-icons view_column
+        div.model-window__header__title
+            | Detalhes do colaborador
+        div.model-window__header__close
+            button.mdl-button.mdl-js-button.mdl-button--primary
+                i.material-icons close
+    div.model-window__small(ng-show="visualizationIndex==2")
+        | Type Window small 
+    div.model-window__medium(ng-show="visualizationIndex==1")
+        p Type Window medium
+    div.model-window__large(ng-show="visualizationIndex==0")
+        | Type Window large

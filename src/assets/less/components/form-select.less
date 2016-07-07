@@ -1,0 +1,128 @@
+.form-select {
+    position: relative;
+    font-size: 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 0;  
+}
+
+.form-select--align-right {
+    text-align: right;
+}
+
+.form-select--full-width {
+    width: 100%;
+}
+
+.form-select__select {
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+    margin: 0;
+    color: inherit;
+    background: transparent;
+    font-size: 16px;
+    text-align: left;
+    color: inherit;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-select.is-focused .form-select__select {
+    outline: none;
+}
+
+.form-select.is-invalid .form-select__select {
+    border-color: rgb(222, 50, 38);
+    box-shadow: none;
+}
+
+fieldset[disabled] .form-select .form-select__select, .form-select.is-disabled .form-select__select {
+    background-color: transparent;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-select__label {
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.26);
+    font-size: 16px;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 24px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.form-select.is-dirty .form-select__label {
+    visibility: hidden;
+}
+
+.form-select--floating-label .form-select__label {
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+fieldset[disabled] .form-select .form-select__label, .form-select.is-disabled.is-disabled .form-select__label {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.form-select--floating-label.is-focused .form-select__label, .form-select--floating-label.is-dirty .form-select__label {
+    color: rgb(63, 81, 181);
+    font-size: 12px;
+    top: 4px;
+    visibility: visible;
+}
+
+.form-select--floating-label.is-invalid .form-select__label {
+    color: rgb(222, 50, 38);
+    font-size: 12px;
+}
+
+.form-select__label:after {
+    background-color: rgb(63, 81, 181);
+    bottom: 20px;
+    content: '';
+    height: 2px;
+    left: 45%;
+    position: absolute;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    width: 10px;
+}
+
+.form-select.is-focused .form-select__label:after {
+    left: 0;
+    visibility: visible;
+    width: 100%;
+}
+
+.form-select.is-invalid .form-select__label:after {
+    background-color: rgb(222, 50, 38);
+}
+
+.form-select__error {
+    color: rgb(222, 50, 38);
+    position: absolute;
+    font-size: 12px;
+    margin-top: 3px;
+    visibility: hidden;
+    display: block;
+}
+
+.form-select.is-invalid .form-select__error {
+    visibility: visible;
+}
