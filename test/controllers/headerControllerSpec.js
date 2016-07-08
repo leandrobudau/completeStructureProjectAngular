@@ -4,13 +4,10 @@ describe('Header Controller', function () {
         $scope,
         controller;
 
-
     //Load objects instance of the angular
     beforeEach(function () {
         module('app');
-
         inject(function ($injector) {
-
             inject(function ($injector) {
                 $rootScope = $injector.get('$rootScope');
                 $scope = $rootScope.$new();
@@ -21,12 +18,10 @@ describe('Header Controller', function () {
         });
     });
 
-
     // //Tests Tasks
     it('Should be with the $scope.teste = Leandro', function () {
        expect($scope.teste).toEqual("Leandro");  
     });  
-
     it('Should be with function teste returning value teste', function () {
        expect($scope.funcao()).toBe('funcao');  
     });  

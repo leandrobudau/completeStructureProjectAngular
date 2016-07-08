@@ -45,7 +45,7 @@ gulp.task('usemin', function () {
     gulp.src('./src/**/*.html')
         .pipe(usemin({
             css: [],
-            js: []
+            jsNgAnnotate: [ngAnnotate()] 
         }))
         .pipe(gulp.dest('build/'))
         //.pipe(connect.reload())
