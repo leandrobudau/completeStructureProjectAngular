@@ -1,4 +1,17 @@
 h1 404
+h1 Atualização de dados
+form(name="form", ng-controller="upload")
+    div.form-group
+        label Usuario
+        input(type="text" ng-model="topo.usuario").form-control
+    div.form-group
+        label Senha
+        input(type="text" ng-model="topo.password").form-control 
+    div.form-group
+        label Photo
+        input(type="file" name="file" file-model="topo.file").form-control
+    div.form-group
+        button.btn.btn-success(type="submit" ng-click="submit()") Atualizar     
 ui-view  
 
 
