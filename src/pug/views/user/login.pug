@@ -1,0 +1,12 @@
+h1 Login
+h1 Acesso ao sistema
+form(name="form" action="")
+    div.form-group
+        label Usuario
+        input(type="text" ng-model="topo.username").form-control
+    div.form-group
+        label Senha
+        input(type="text" ng-model="topo.password").form-control 
+    div.form-group
+        button.btn.btn-success(type="button" ng-click="login()") Entrar     
+ui-view  

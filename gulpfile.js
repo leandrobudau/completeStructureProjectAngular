@@ -70,7 +70,7 @@ gulp.task('less', function () {
 
 gulp.task('connect', function () {
     connect.server({
-        port: 5000,
+        port: 7000,
         livereload: true
     });
 });

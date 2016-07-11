@@ -2,21 +2,28 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/404');
 
   $stateProvider
+   .state('home', {
+      url: '/home',
+      templateUrl: 'views/home.html'
+    })
     .state('404', {
       url: '/404',
-      templateUrl: 'views/404.html'
+      templateUrl: 'views/error.html',
+      controller: 'errorHttpRequestController'
     })
-    .state('404.405', {
-      url: '/405',
-      templateUrl: 'views/405.html'
+    .state('register', {
+      url: '/register',
+      templateUrl: 'views/user/register.html',
+      controller: 'registerUserController'
     })
-    .state('404.405.406', {
-      url: '/406',
-      templateUrl: 'views/406.html'
+    .state('login', {
+      url: '/login',
+      templateUrl: 'views/user/login.html',
+      controller: 'loginUserController'
     })
-    .state('404.405.406.407', {
-      url: '/407',
-      templateUrl: 'views/407.html'
+    .state('logout', {
+      url: '/logout',
+      templateUrl: 'views/user/logout'
     })
     .state('404.405.406.407.408', {
       url: '/408',
