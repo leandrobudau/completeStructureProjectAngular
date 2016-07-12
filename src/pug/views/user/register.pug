@@ -9,7 +9,7 @@ form(name="form")
         input(type="text" ng-model="user.password").form-control 
     div.form-group
         label Photo
-        input(type="file" name="file" file-model="user.file").form-control
+        input(type="file" name="file" file-upload="file").form-control
     div.form-group
         button.btn.btn-success(type="button" ng-click="submit()") Atualizar     
 ui-view  

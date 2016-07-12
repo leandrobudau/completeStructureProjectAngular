@@ -1,20 +1,20 @@
-app.controller('registerUserController', function ($scope, userFactory) {
+app.controller('registerUserController', function ($scope, userFactory, fileUploadService) {
 
   $scope.submit = function () {
-    var params = new FormData();
-      for (var key in $scope.user)
-        params.append(key, $scope.user[key]);
+    debugger;
+    fileUploadService.uploadFileToUrl($scope.file, 'http://localhost:8000/upload')
+      .success(function (data) {
+        if(data.filename)
+          $scope.user.photo = data.filename
+        
 
-    userFactory.register(params).success(function (err, data) {
-      console.log(err);
-
-    });
-
-    // userFactory.user().save({user: $scope.user}, function (err, data) {
-    //   debugger;
-    // });
-
-
-
+        userFactory.user().save($scope.user, function (err, data) {
+          if(err)
+            console.error(err);
+            else
+            console.log(data)
+        })
+      })
+      .error(function () {})
   }
 })
