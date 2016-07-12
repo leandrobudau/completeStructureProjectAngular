@@ -5,8 +5,16 @@ app.controller('registerUserController', function ($scope, userFactory) {
       for (var key in $scope.user)
         params.append(key, $scope.user[key]);
 
-    userFactory.register(params).success(function (data) {
-      console.log('sdf')
+    userFactory.register(params).success(function (err, data) {
+      console.log(err);
+
     });
+
+    // userFactory.user().save({user: $scope.user}, function (err, data) {
+    //   debugger;
+    // });
+
+
+
   }
 })

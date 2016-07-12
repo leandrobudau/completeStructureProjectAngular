@@ -7,7 +7,7 @@ var gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     rev = require('gulp-rev'),
     imagemin = require('gulp-imagemin'),
-    less = require('gulp-less'),
+    sass = require('gulp-sass'),
     connect = require('gulp-connect'),
     pug = require('gulp-pug'),
     templateCache = require('gulp-angular-templatecache'), 
@@ -61,9 +61,9 @@ gulp.task('reload', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('less', function () {
-    gulp.src('./src/assets/less/main.less')
-        .pipe(less())
+gulp.task('sass', function () {
+    gulp.src('./src/assets/sass/main.sass')
+        .pipe(sass())
         .pipe(gulp.dest('./src/assets/css'))
         .pipe(connect.reload());
 });
@@ -92,7 +92,7 @@ gulp.task('templateCache', function () {
 
 
 gulp.task('watch', function () {
-    gulp.watch('./src/assets/less/**/*.less', ['less']);
+    gulp.watch('./src/assets/sass/**/*.sass', ['sass']);
     gulp.watch('./src/pug/**/*.pug', ['pug', 'templateCache']);
     gulp.watch(['./src/**/*.html', './src/**/*.js', './src/assets/img/**/*.*'], ['reload']);
 });

@@ -7,7 +7,9 @@ app.factory('userFactory', function ($http, $resource) {
   }
 
   var user = function () {
-    return $resource('http://localhost/8000/:id/', {}, { update: {method: 'PUT'}})
+      debugger;
+    return $resource('http://localhost/8000/:id/', {id: '@id'});
+    //return $resource('http://localhost/8000/:id/', {id: '@id'}, { update: {method: 'PUT'}})
   }
 
   var register = function (params) {
